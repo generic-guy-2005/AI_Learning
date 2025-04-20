@@ -17,6 +17,8 @@ def linear_fun(slope=None, x1=None, y1=None, x2=None, y2=None):
         if x1 < 0:
             x1 = x1 * -1
             left = x1
+        else:
+            left = x1
 
         # Move y1 to the right side
         y1 = y1 * -1
@@ -25,6 +27,8 @@ def linear_fun(slope=None, x1=None, y1=None, x2=None, y2=None):
         result = left + right
         if result > 0:
             value = f"+ {result}"
+        else:
+            value = f"{result}"
 
         print(f"Result:\ny = {m}x {value}")
 

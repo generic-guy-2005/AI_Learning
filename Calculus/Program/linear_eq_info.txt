@@ -1,0 +1,11 @@
+File: linear_eq.py
+Language: Python
+Level = Basic
+
+Description:
+Implement the linear equation problem and solve them
+
+Improvement:
+- Error handling for each values
+- Zero handling if slope divided by 0
+- Implement another case

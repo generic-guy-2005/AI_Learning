@@ -1,50 +1,69 @@
 # Solve linear equations
 
 slope = None
+x1 = 0
+x2 = 0
+y1 = 0
+y2 = 0
+
+def linear_form(slope, b):
+    slope = slope * -1
+
+    if slope < 0:
+        slope = slope * -1
+        b = b * -1
+        print(f"Standard Form:\n{round(slope, 2)}x - y = {round(b, 2)}")
+    else:
+        print(f"Standard Form:\n{round(slope, 2)}x + y = {round(b, 2)}")
+
+    print("--------------------")
 
 def linear_fun(slope=None, x1=None, y1=None, x2=None, y2=None):
     if slope is None:
-        # Using slope formula
-        delta_y = y2 - y1
-        delta_x = x2 - x1
-        m = delta_y / delta_x
+        slope = (y2 - y1) / (x2 - x1)
+        b = y1 - slope * x1
 
-        # Using point-slope formula
-        if y1 < 0:
-            y1 = y1 * -1
-
-        x1 = m * x1
-        if x1 < 0:
-            x1 = x1 * -1
-            left = x1
+        if slope < 0 and b < 0:
+            slope = slope * -1
+            b = b * -1
+            print(f"y-Intercept Form:\ny = {round(slope, 2)}x + {round(b, 2)}")
         else:
-            left = x1
+            print(f"y-Intercept Form:\ny = {round(slope, 2)}x + {round(b, 2)}")
 
-        # Move y1 to the right side
-        y1 = y1 * -1
-        right = y1
-
-        result = left + right
-        if result > 0:
-            value = f"+ {result}"
+    if slope is not None:
+        if x1 is None:
+            b = y2 - slope * x2
         else:
-            value = f"{result}"
+            b = y1 - slope * x1
 
-        print(f"Result:\ny = {m}x {value}")
+        if slope < 0 and b < 0:
+            slope = slope * -1
+            b = b * -1
+
+        print(f"y-Intercept Form:\ny = {round(slope, 2)}x + {round(b, 2)}")
+        print("--------------------")
+
+    linear_form(slope, b)
 
 while True:
     print("What is known from the problem?\n1. Slope (m)\n2. Point A (x_1, y_1)\n3. Point B (x_2, y_2)\n4. Calculate\n0. Exit")
     choice = int(input("Choice: "))
 
     if choice == 1:
-        slope = int(input("Enter the value of the slope: "))
+        slope_a = int(input("Enter the value of the slope numerator: "))
+        slope_b = int(input("Enter the value of the slope denumerator: "))
+        slope = slope_a / slope_b
+        print("--------------------")
     elif choice == 2:
         x1 = int(input("Enter x_1 value: "))
         y1 = int(input("Enter y_1 value: "))
+        print("--------------------")
     elif choice == 3:
         x2 = int(input("Enter x_2 value: "))
         y2 = int(input("Enyer y_2 value: "))
+        print("--------------------")
     elif choice == 4:
+        print("--------------------")
         linear_fun(slope, x1, y1, x2, y2)
     elif choice == 0:
         print("Exiting...")

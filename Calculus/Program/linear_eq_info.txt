@@ -9,3 +9,4 @@ Improvement:
 - Error handling for each values (Working on it)
 - Zero handling if slope divided by 0 (Not implemented)
 - Implement another case (Done)
+- Implement graph drawing using matplotlib.pyplot

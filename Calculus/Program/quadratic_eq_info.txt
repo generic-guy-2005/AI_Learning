@@ -1,0 +1,11 @@
+File: quadratic_eq.py
+Language: Python
+Level: Basic
+
+Description:
+Implement the quadratic function and find its properties
+
+Improvement:
+- Error handling for each values
+- Implement another form
+- Implement graph drawing using matplotlib.pyplot
